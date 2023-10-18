@@ -1,26 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/swoaper-logo.png";
+import "./Navbar.scss";
 
 const Navbar = () => {
   return (
-    <nav>
-      <ul className="navbar">
-        <img src={Logo}></img>
-        <li>
+    <nav className="navbar">
+      <div className="navbar-logo">
+        <img src={Logo} alt="Logo" />
+      </div>
+      <div className="navbar-container">
+        <div className="navbar-item">
           <Link to="/home">Home</Link>
-        </li>
-        <li>
+        </div>
+        <div className="navbar-item">
           <Link to="/contact">Contact</Link>
-        </li>
-        <li>
+        </div>
+        <div className="navbar-item">
           <Link to="/prestations">Prestation</Link>
-        </li>
-        <li>
+        </div>
+        <div className="navbar-item">
           <Link to="/boutique">Boutique</Link>
-        </li>
+        </div>
         {/* Vous pouvez ajouter d'autres liens ici si nécessaire */}
-      </ul>
+      </div>
+      <div className="icon">
+        <i className="material-icons">favorite</i>
+        <i className="material-icons">shopping_cart</i>
+        <i className="material-icons">person</i>
+      </div>
     </nav>
   );
 };
