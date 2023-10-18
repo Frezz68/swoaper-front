@@ -2,11 +2,11 @@
 
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Prestation from "./pages/Prestation";
-import Contact from "./pages/Contact";
-import Boutique from "./pages/Boutique";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./pages/Home/Home";
+import Prestation from "./pages/Prestation/Prestation";
+import Contact from "./pages/Contact/Contact";
+import Boutique from "./pages/Boutique/Boutique";
 function App() {
   return (
     <Router>

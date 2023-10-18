@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../assets/swoaper-logo.png";
+import Logo from "../../assets/swoaper-logo.png";
 
 const Navbar = () => {
   return (
     <nav>
-      <ul>
+      <ul className="navbar">
         <img src={Logo}></img>
         <li>
           <Link to="/home">Home</Link>
