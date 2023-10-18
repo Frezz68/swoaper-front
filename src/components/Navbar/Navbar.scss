@@ -1,0 +1,67 @@
+.navbar {
+  height: 100px;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  background: #fff;
+  box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.25);
+
+  .navbar-logo {
+    img {
+      width: 200px;
+    }
+  }
+  .navbar-container {
+    gap: 32px;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .navbar-item {
+      position: relative; // Ajouté pour le positionnement de a:after
+      a,
+      a:visited {
+        text-decoration: none;
+        color: #000; // ou toute autre couleur que vous souhaitez utiliser
+        font-family: Poppins;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: normal;
+        outline: none;
+        border: none;
+
+        &:after {
+          content: "";
+          position: absolute;
+          background-color: black;
+          height: 3px;
+          width: 0; // Initialement à 0 pour qu'il soit invisible
+          left: 0;
+          bottom: 0; // Pour le positionner sous le texte
+          transition: width 0.3s; // Animation douce
+        }
+
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          color: #000; // ou une autre couleur pour le hover/focus si vous le souhaitez
+
+          &:after {
+            width: 100%; // Étend la barre sous le texte au survol ou focus
+          }
+        }
+      }
+    }
+  }
+
+  .icon {
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+}
