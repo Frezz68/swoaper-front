@@ -1,0 +1,56 @@
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem;
+    font-family: Poppins;
+    font-size: 1.25rem;
+    font-weight: 500;
+    .centerImg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5rem;
+        img {
+            height: 5rem;
+            width: auto;
+        }
+    }
+    .centerText {
+        justify-content: space-evenly;
+        margin-bottom: 5rem;
+        .textFormat {
+            text-align: justify;
+            margin-bottom: 2rem;
+            line-height: 1.75rem;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+        }
+    }
+}
+.sectionPresta{
+    .divTitlePresta{
+        display: flex;
+        width: 100%;
+        margin-bottom: 5rem;
+        justify-content: space-between;
+        align-items: center;
+        .titlePresta{
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+            padding-bottom: 2.5rem;
+            padding-top: 2.5rem;
+        }
+    }
+    .displayCard{
+        display: flex;
+        flex-direction: row;
+    }
+}
+.homeColor{
+    background-color: rgb(245 235 224/1);
+}
+.bold-text {
+    font-weight: 700;
+}
+
