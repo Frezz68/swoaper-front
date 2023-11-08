@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Logo from "../../assets/swoaper-logo.png";
 import CardPrestation from "../../components/CardPrestation/CardPrestation";
-import {faHandSparkles, faSoap, faPumpSoap } from '@fortawesome/free-solid-svg-icons';
+import {faHandSparkles, faSoap, faPumpSoap, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Home.scss";
 
 const Home = () => {
@@ -37,7 +39,7 @@ const Home = () => {
             <CardPrestation nomPresta="Déjaunissement" prixPresta={20} Icon={faSoap} />
             <CardPrestation nomPresta="Restauration peinture" prixPresta={0} Icon={faPumpSoap} />
           </div>
-          <div></div>
+          <div className="posSavoir"><Link to="/prestations" className="textSavoir">En savoir plus <FontAwesomeIcon className="cardIcon" icon={faChevronRight} /></Link></div>
 
         </div>
       </section>

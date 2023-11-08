@@ -2,10 +2,12 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 5rem;
+    padding: 2rem;
     font-family: Poppins;
     font-size: 1.25rem;
     font-weight: 500;
+    box-sizing: border-box;
+    width: 100%;
     .centerImg {
         display: flex;
         justify-content: center;
@@ -29,13 +31,16 @@ section {
     }
 }
 .sectionPresta{
+    display: flex;
+    flex-direction: column;
     .divTitlePresta{
         display: flex;
         width: 100%;
         margin-bottom: 5rem;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         .titlePresta{
+            font-weight: 700;
             font-size: 2.25rem;
             line-height: 2.5rem;
             padding-bottom: 2.5rem;
@@ -45,12 +50,34 @@ section {
     .displayCard{
         display: flex;
         flex-direction: row;
+        margin-bottom: 5rem;
+        gap: 5rem;
+    }
+    .posSavoir{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        .textSavoir{
+            color: inherit;
+            text-decoration: inherit;
+            display: flex;
+            transition-duration: .5s;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            transition-timing-function: cubic-bezier(0,0,.2,1);
+            
+        }
+        .textSavoir:hover{
+            color: rgb(125 174 230);
+        }
     }
 }
 .homeColor{
     background-color: rgb(245 235 224/1);
 }
 .bold-text {
-    font-weight: 700;
+    font-weight: bold;
 }
 
