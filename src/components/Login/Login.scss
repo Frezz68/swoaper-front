@@ -1,0 +1,91 @@
+.login-container {
+  width: 300px; /* ou la largeur désirée */
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px; /* exemple de bord arrondi */
+
+  img {
+    width: 200px;
+  }
+}
+
+.login-container h2 {
+  color: #000;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  button {
+    font-size: 15px;
+  }
+}
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  height: 40px;
+
+  .img-container {
+    padding: 0 5px;
+    height: 100%;
+    width: 10%;
+    background-color: #dae5ef;
+    border-top-right-radius: 8px; /* Rayon de la bordure pour le coin supérieur gauche */
+    border-bottom-right-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 24px;
+    }
+  }
+
+  input {
+    color: #565656;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0;
+    padding-left: 20px;
+    height: 100%;
+    border-top-left-radius: 8px; /* Rayon de la bordure pour le coin supérieur gauche */
+    border-bottom-left-radius: 8px;
+  }
+}
+
+.form-control {
+  background-color: #dae5ef;
+
+  width: 90%;
+  border: none; /* Enlève les bordures */
+  outline: none; /* Enlève l'outline qui apparaît lors du focus */
+  margin: 0; /* Réinitialise les marges */
+}
+
+.link {
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  .create-account {
+    font-size: 12px !important;
+  }
+  a {
+    color: #000;
+    text-decoration: none; /* Supprime le soulignement par défaut */
+    background-color: transparent; /* Assure que le fond est transparent */
+  }
+}

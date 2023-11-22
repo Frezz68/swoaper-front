@@ -1,5 +1,6 @@
 import React from "react";
 import "./SectionPresta.scss";
+import "../../style/button.scss";
 
 interface SectionPrestaProps {
   imageSrc: string;
@@ -28,7 +29,7 @@ const SectionPresta: React.FC<SectionPrestaProps> = ({
     <div className="info">
       <div className="title">{title}</div>
       <div className="content">{content}</div>
-      <button onClick={action} className="bouton">
+      <button onClick={action} className="btn-primary">
         {label}
       </button>
     </div>

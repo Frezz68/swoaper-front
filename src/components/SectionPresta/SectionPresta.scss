@@ -42,27 +42,5 @@
       font-weight: 500;
       line-height: normal;
     }
-
-    .bouton {
-      width: fit-content;
-      padding: 10px 20px;
-      border-radius: 40px;
-      background: #253784;
-      color: white;
-      color: #fff;
-      font-family: Poppins;
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-      transition: 0.3s;
-      border: 3px white solid;
-
-      &:hover {
-        background: #fff;
-        color: #253784;
-        border: 3px #253784 solid;
-      }
-    }
   }
 }
