@@ -6,6 +6,7 @@ import "../../style/button.scss";
 import Logo from "../../assets/swoaper-logo.png";
 import Signup from "../Signup/Signup";
 import ModalService from "../../services/ModalService";
+import axios from "axios";
 
 interface LoginProps {
   onSignUpClick: () => void; // Définissez les types des props ici
@@ -23,9 +24,29 @@ const Login: FC<LoginProps> = ({ onSignUpClick }) => {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    // Logique de vérification des informations de connexion
+
+    try {
+      const response = await axios.post("http://localhost:3001/login", {
+        email,
+        password,
+      });
+
+      // Gérer la réponse ici
+      // Par exemple, stockez le token dans le stockage local et redirigez l'utilisateur
+      console.log(response.data);
+      localStorage.setItem("token", response.data.token); // Supposons que le token est retourné dans response.data.token
+      // Redirection à la page d'accueil ou au tableau de bord de l'utilisateur
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        // Gestion d'erreur spécifique Axios
+        console.error(error.response?.data || "Erreur lors de la connexion");
+      } else {
+        // Autres erreurs (réseau, etc.)
+        console.error("Une erreur de connexion est survenue");
+      }
+    }
   };
 
   return (

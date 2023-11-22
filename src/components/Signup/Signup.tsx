@@ -45,7 +45,6 @@ const Signup: FC<SignupProps> = ({ onSignInClick }) => {
     event.preventDefault();
 
     try {
-      console.log(email, password, firstName, lastName, shoeSize);
       const response = await axios.post("http://localhost:3001/register", {
         email: email,
         password: password,
