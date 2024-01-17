@@ -34,6 +34,17 @@
       justify-content: center;
       flex-direction: column;
       align-items: center;
+
+      a {
+        list-style: none;
+        text-decoration: underline;
+        color: black;
+        font-size: medium;
+      }
+
+      a:hover {
+        color: #383838;
+      }
     }
     .icons {
       flex: 1;
@@ -41,7 +52,7 @@
       flex-direction: column;
       gap: 20px;
       justify-content: center;
-      align-items: center;
+      align-items: center;  
 
       .icon {
         width: 24px;

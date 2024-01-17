@@ -2,21 +2,21 @@ import React from "react";
 import "./Footer.scss";
 import instagram from "../../assets/footer/instagram.png";
 import tiktok from "../../assets/footer/tiktok.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <div className="footer">
       <div className="container-footer">
         <div className="links">
-          <div className="link-list">
-            <div>Mentions légales</div>
-            <div>Conditions de nos offres</div>
-            <div>Politiques de confidentialités</div>
-          </div>
+          <Link to="/politique-de-confidentialite">Politique de confidentialité</Link>
+          <Link to="/politique-de-remboursement">Politique de remboursement</Link>
+          <Link to="/politique-de-livraison">Politique de Livraison</Link>
         </div>
         <div className="links">
-          <div>CGU</div>
-          <div>CGV</div>
+          <Link to="/mentions-legales">Mentions légales</Link>
+          <Link to="/conditions-generales-de-vente">Conditions générales de vente</Link>
+          <Link to="/conditions-generales-utilisation">Condition générales d'utilisation</Link>
         </div>
         <div className="icons">
           <img className="icon" src={tiktok} alt="" />
