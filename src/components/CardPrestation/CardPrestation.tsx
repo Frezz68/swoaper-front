@@ -20,7 +20,7 @@ const CardPrestation = ( props: CardPrestationProps) => {
                             {props.prixPresta.toString()} €
                         </p>
                     </div>
-                    <FontAwesomeIcon className="cardIcon" icon={props.Icon} style={{color: "#ffffff",}} />
+                    <FontAwesomeIcon className="cardIcon" icon={props.Icon} />
                 </div>
             </div>
         </div>

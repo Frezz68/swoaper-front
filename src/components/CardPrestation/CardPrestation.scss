@@ -38,6 +38,7 @@
         .cardIcon {
             font-size: 3rem;
             line-height: 1;
+            color: rgb(255 255 255);
         }
     }
 }
@@ -45,4 +46,15 @@
 .card:hover {
     transform: scale(1.05);
     box-shadow: 0 0 11px rgba(33,33,33,.2);
+    .cardPos{
+        transition: 0.3s;
+        background-color: rgb(243, 190, 215);
+        .cardFont{
+            color: rgb(33,33,33);
+        }
+        .cardIcon{
+            color: rgb(33,33,33);
+        }
+    }
+    
 }
