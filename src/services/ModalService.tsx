@@ -3,7 +3,10 @@ import React, { useState } from "react";
 import "./ModalService.scss";
 
 interface ModalServiceProps {
-  children: (openModal: (content: React.ReactNode) => void) => React.ReactNode;
+  children: (
+    openModal: (content: React.ReactNode) => void,
+    closeModal: () => void // Ajoutez closeModal comme deuxième argument
+  ) => React.ReactNode;
 }
 
 const ModalService: React.FC<ModalServiceProps> = ({ children }) => {
@@ -20,11 +23,12 @@ const ModalService: React.FC<ModalServiceProps> = ({ children }) => {
   const closeModal = () => {
     setModalContent(null);
     setModalOpen(false);
+    console.log("click dessus");
   };
 
   return (
     <div>
-      {children(openModal)}
+      {children(openModal, closeModal)}
       {isModalOpen && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal" onClick={(event) => event.stopPropagation()}>

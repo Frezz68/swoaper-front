@@ -7,14 +7,18 @@ import Logo from "../../assets/swoaper-logo.png";
 import Signup from "../Signup/Signup";
 import ModalService from "../../services/ModalService";
 import axios from "axios";
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 
 interface LoginProps {
   onSignUpClick: () => void; // Définissez les types des props ici
+  close: () => void;
 }
 
-const Login: FC<LoginProps> = ({ onSignUpClick }) => {
+const Login: FC<LoginProps> = ({ onSignUpClick, close }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { setUser } = useContext(UserContext);
 
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
@@ -36,6 +40,11 @@ const Login: FC<LoginProps> = ({ onSignUpClick }) => {
       // Gérer la réponse ici
       // Par exemple, stockez le token dans le stockage local et redirigez l'utilisateur
       console.log(response.data);
+      if (response.data.user) {
+        setUser(response.data.user);
+        close();
+      }
+
       localStorage.setItem("token", response.data.token); // Supposons que le token est retourné dans response.data.token
       // Redirection à la page d'accueil ou au tableau de bord de l'utilisateur
     } catch (error) {

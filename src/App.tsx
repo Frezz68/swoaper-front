@@ -8,23 +8,27 @@ import Prestation from "./pages/Prestation/Prestation";
 import Contact from "./pages/Contact/Contact";
 import Boutique from "./pages/Boutique/Boutique";
 import Footer from "./components/Footer/Footer";
+import { UserProvider } from "./context/UserContext";
+
 function App() {
   return (
-    <Router>
-      <div>
-        {/* ... (autres composants, comme Navbar) */}
-        <Navbar />
-        <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/prestations" element={<Prestation />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/boutique" element={<Boutique />} />
+    <UserProvider>
+      <Router>
+        <div>
+          {/* ... (autres composants, comme Navbar) */}
+          <Navbar />
+          <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route path="/prestations" element={<Prestation />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/boutique" element={<Boutique />} />
 
-          {/* Vous pouvez ajouter d'autres routes ici si nécessaire */}
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+            {/* Vous pouvez ajouter d'autres routes ici si nécessaire */}
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </UserProvider>
   );
 }
 

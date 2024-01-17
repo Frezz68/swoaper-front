@@ -10,9 +10,10 @@ import axios from "axios";
 
 interface SignupProps {
   onSignInClick: () => void; // This function will be passed to handle "I already have an account" click
+  close: () => void;
 }
 
-const Signup: FC<SignupProps> = ({ onSignInClick }) => {
+const Signup: FC<SignupProps> = ({ onSignInClick, close }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -52,7 +53,7 @@ const Signup: FC<SignupProps> = ({ onSignInClick }) => {
         last_name: lastName,
         size: shoeSize,
       });
-
+      close();
       console.log(response.data); // Gérer la réponse du serveur
       // Vous pouvez ajouter une redirection ou un message de succès ici
     } catch (error) {
