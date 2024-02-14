@@ -7,7 +7,7 @@ import "../Prestation/Prestation.scss";
 
 const Prestation = () => {
   return (
-    <div className="container">
+    <div className="container-prestation">
       <SectionPresta
         imageSrc={image1}
         title="Nettoyage - 20 €"

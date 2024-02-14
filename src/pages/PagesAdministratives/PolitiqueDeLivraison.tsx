@@ -3,7 +3,7 @@ import "./PagesAdmin.scss";
 const PolitiqueDeLivraison = () => {
     return (
         <div className="container-1">
-            <div className="container">
+            <div className="container-admin">
                 <h2>Politique de livraison</h2>
                 <div className="content">
                     <h2>Options d'Envoi</h2>

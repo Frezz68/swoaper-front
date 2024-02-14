@@ -3,7 +3,7 @@ import "./PagesAdmin.scss";
 const PolitiqueDeRemboursement = () => {
     return (
         <div className="container-1">
-            <div className="container">
+            <div className="container-admin">
                 <h2>Politique de remboursement</h2>
                 <div className="content">
                     <h2>Durée de la Politique de Remboursement</h2>

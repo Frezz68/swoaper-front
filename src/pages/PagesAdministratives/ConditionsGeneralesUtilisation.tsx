@@ -3,7 +3,7 @@ import "./PagesAdmin.scss";
 const ConditionsGeneralesUtilisation = () => {
     return (
         <div className="container-1">
-            <div className="container">
+            <div className="container-admin">
                 <h2>Mentions légales</h2>
                 <div className="content">
                     <h2>Prestations de Nettoyage de Chaussures</h2>
