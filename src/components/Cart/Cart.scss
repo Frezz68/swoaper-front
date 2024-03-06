@@ -1,0 +1,169 @@
+.cart {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  font-family: Poppins;
+
+  .cart-items {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    h1 {
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+  }
+
+  .cart-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 35%;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    h1 {
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+
+    .promo-code {
+      display: flex;
+      margin-bottom: 20px;
+
+      input {
+        flex: 1;
+        padding: 10px;
+        margin-right: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          background-color: darken(#007bff, 5%);
+        }
+      }
+    }
+
+    .subtotal,
+    .shipping,
+    .total {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      .total_taxe {
+        display: flex;
+        flex-direction: column;
+        span:last-child {
+          color: grey;
+          font-size: 12px;
+        }
+      }
+
+      span:last-child {
+        font-weight: bold;
+      }
+    }
+
+    .checkout-button .paypal-button {
+      width: 100%;
+      padding: 15px;
+      margin-top: 20px;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken(#007bff, 5%);
+      }
+    }
+
+    .checkout-button {
+      background-color: #3b82f6; // Une couleur bleue similaire à l'image
+      color: white;
+      border: none;
+      border-radius: 20px; // Les coins arrondis, ajustez selon l'image
+      padding: 10px 20px; // Ajustez selon la taille souhaitée
+      font-size: 16px; // Ajustez selon la taille de la police souhaitée
+      text-transform: uppercase; // Met le texte en majuscules
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Une légère ombre pour la profondeur
+      cursor: pointer;
+      transition: background-color 0.3s, box-shadow 0.3s; // Transition pour l'interaction
+
+      &:hover {
+        background-color: darken(
+          #3b82f6,
+          10%
+        ); // Assombrir le bouton lors du survol
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); // Ombre plus grande au survol
+      }
+
+      &:active {
+        background-color: darken(
+          #3b82f6,
+          15%
+        ); // Assombrir davantage lors du clic
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Ombre plus petite lors du clic
+      }
+    }
+
+    .paypal-button {
+      background-color: transparent;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+.cart-item {
+  display: flex;
+  margin-bottom: 20px;
+
+  img {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+  }
+
+  .item-details {
+    h2 {
+      margin: 0;
+    }
+
+    span {
+      display: block;
+      margin-top: 10px;
+    }
+  }
+}
+.apply {
+  padding: 0 5px;
+  height: 100%;
+  width: 10%;
+  background-color: #dae5ef;
+  border-top-right-radius: 8px; /* Rayon de la bordure pour le coin supérieur gauche */
+  border-bottom-right-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: grey;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: Poppins;
+}
+.btn-container {
+  align-items: center;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  .btn {
+    width: 100%;
+  }
+}
