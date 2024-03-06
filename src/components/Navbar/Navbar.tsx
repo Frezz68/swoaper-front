@@ -44,7 +44,9 @@ const Navbar = () => {
       )}
       <div className="icon">
         <i className="material-icons">favorite</i>
-        <i className="material-icons">shopping_cart</i>
+        <Link to="/panier">
+          <i className="material-icons">shopping_cart</i>
+        </Link>{" "}
         {/* Use ModalService to open modals for Login and Signup */}
         <ModalService>
           {(openModal, closeModal) => (

@@ -15,6 +15,7 @@ import MentionsLegales from "./pages/PagesAdministratives/MentionsLegales";
 import ConditionsGeneralesDeVente from "./pages/PagesAdministratives/ConditionsGeneralesDeVente";
 import ConditionsGeneralesUtilisation from "./pages/PagesAdministratives/ConditionsGeneralesUtilisation";
 import { UserProvider } from "./context/UserContext";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
               path="/politique-de-livraison"
               element={<PolitiqueDeLivraison />}
             />
+            <Route path="/panier" element={<Cart />} />
             <Route path="/mentions-legales" element={<MentionsLegales />} />
             <Route
               path="/conditions-generales-de-vente"
