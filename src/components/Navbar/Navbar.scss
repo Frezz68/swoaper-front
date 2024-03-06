@@ -75,3 +75,15 @@
     line-height: normal;
   }
 }
+
+a {
+  color: inherit; /* Fait en sorte que la couleur du texte hérite de son parent */
+  text-decoration: none; /* Supprime le soulignement */
+  background-color: transparent; /* Assure que le fond est transparent */
+}
+
+a:hover,
+a:focus {
+  color: inherit; /* Conserve la couleur héritée au survol/sélection */
+  text-decoration: none; /* Assure qu'il n'y a pas de soulignement au survol/sélection */
+}
