@@ -7,7 +7,7 @@ import image2 from "../../assets/prestations/image2.png";
 import image3 from "../../assets/prestations/image3.png";
 
 interface ServiceItem {
-  id: string;
+  _id: string;
   name: string;
   price: number;
   image: string; // Assurez-vous que l'image est une URL valide
@@ -23,58 +23,69 @@ const Cart = () => {
   }, [cartItems]);
 
   useEffect(() => {
-    const fetchCartItems = async () => {
-      const token = localStorage.getItem("token");
+    fetchCartItems();
+  }, []);
 
-      try {
-        console.log("Fetching cart items");
-        // Use axios to get the user cart
-        const response = await axios.get(
-          "http://localhost:3001/carts/user-cart",
-          {
+  useEffect(() => {
+    const total = cartItems.reduce((acc, item) => acc + item.price, 0);
+    setTotalPrice(total);
+  }, [cartItems]);
+
+  const fetchCartItems = async () => {
+    const token = localStorage.getItem("token");
+
+    try {
+      console.log("Fetching cart items");
+      // Use axios to get the user cart
+      const response = await axios.get(
+        "http://localhost:3001/carts/user-cart",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.status !== 200) {
+        throw new Error("Problème lors de la récupération du panier");
+      }
+
+      const data = response.data;
+      const serviceIds = data.services;
+
+      // Use axios to get the details for each service using their IDs
+      const serviceDetailsPromises = serviceIds.map((id: any) =>
+        axios
+          .get(`http://localhost:3001/services/${id}`, {
             headers: {
               Authorization: `Bearer ${token}`,
               "Content-Type": "application/json",
             },
-          }
-        );
+          })
+          .then((res) => res.data)
+      );
 
-        if (response.status !== 200) {
-          throw new Error("Problème lors de la récupération du panier");
-        }
-
-        const data = response.data;
-        const serviceIds = data.services;
-
-        // Use axios to get the details for each service using their IDs
-        const serviceDetailsPromises = serviceIds.map((id: any) =>
-          axios
-            .get(`http://localhost:3001/services/${id}`, {
-              headers: {
-                Authorization: `Bearer ${token}`,
-                "Content-Type": "application/json",
-              },
-            })
-            .then((res) => res.data)
-        );
-
-        // Wait for all promises to be resolved
-        const services = await Promise.all(serviceDetailsPromises);
-        setCartItems(services);
-      } catch (error) {
-        console.error("Erreur:", error);
-      }
-    };
-
-    fetchCartItems();
-  }, []);
+      // Wait for all promises to be resolved
+      const services = await Promise.all(serviceDetailsPromises);
+      setCartItems(services);
+    } catch (error) {
+      console.error("Erreur:", error);
+    }
+  };
 
   return (
     <div className="cart">
       <div className="cart-items">
         <h1>Mon panier</h1>
         {cartItems.length > 0 ? (
-          cartItems.map((item) => <CartItem item={item} />)
+          cartItems.map((item) => (
+            <CartItem
+              key={item._id}
+              item={item}
+              fetchCartItems={fetchCartItems}
+            />
+          ))
         ) : (
           <p>Votre panier est vide</p>
         )}
@@ -117,14 +128,49 @@ const Cart = () => {
   );
 };
 
-const CartItem: React.FC<{ item: ServiceItem }> = ({ item }) => {
-  // La logique d'affichage d'un item reste la même
+const CartItem: React.FC<{ item: ServiceItem; fetchCartItems: () => void }> = ({
+  item,
+  fetchCartItems,
+}) => {
+  const deleteService = async (serviceId: string) => {
+    const token = localStorage.getItem("token");
+    try {
+      const response = await axios.post(
+        `http://localhost:3001/carts/delService`,
+        { serviceId: serviceId }, // Envoyer l'ID du service à supprimer dans le corps de la requête
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      if (response.status === 200) {
+        console.log("Service removed successfully from cart");
+        fetchCartItems(); // Re-fetch cart items to update the UI
+      } else {
+        throw new Error("Failed to remove the service from cart");
+      }
+    } catch (error) {
+      console.error("Error while removing service from cart:", error);
+    }
+  };
+
   return (
     <div className="cart-item">
-      <img src={getImage(item.id)} alt={item.name} />
+      <img src={getImage(item._id)} alt={item.name} />
       <div className="item-details">
         <h2>{item.name}</h2>
-        <span>Prix: {item.price} €</span>
+        <div className="price-btn">
+          <span>Prix: {item.price} €</span>
+
+          <span
+            className="material-icons"
+            onClick={() => deleteService(item._id)}
+          >
+            delete
+          </span>
+        </div>
       </div>
     </div>
   );

@@ -133,6 +133,7 @@
   }
 
   .item-details {
+    width: 100%;
     h2 {
       margin: 0;
     }
@@ -166,4 +167,10 @@
   .btn {
     width: 100%;
   }
+}
+.price-btn {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 50px;
+  cursor: pointer;
 }
