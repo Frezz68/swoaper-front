@@ -1,0 +1,28 @@
+.return-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-left: 10%;
+    height: 5px;
+
+    span {
+        font-size: 40px;
+    }
+}
+
+.presta-detail-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+    .image {
+        width: 40%;
+        text-align: center;
+    }
+    h2 {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        font-weight: bold;
+    }
+}

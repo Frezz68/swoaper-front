@@ -1,14 +1,17 @@
 import React from "react";
 import "./SectionPresta.scss";
 import "../../style/button.scss";
+import { Link } from "react-router-dom";
 
 interface SectionPrestaProps {
   imageSrc: string;
   title: string;
   content: string;
   label: string;
-  action: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   swap?: boolean;
+  url?: string;
+  id?: string;
+  action: string
 }
 
 const SectionPresta: React.FC<SectionPrestaProps> = ({
@@ -16,8 +19,10 @@ const SectionPresta: React.FC<SectionPrestaProps> = ({
   title,
   content,
   label,
-  action,
   swap,
+  url,
+  id,
+  action
 }) => {
   const ImageSection = (
     <div className="image">
@@ -29,9 +34,12 @@ const SectionPresta: React.FC<SectionPrestaProps> = ({
     <div className="info">
       <div className="title">{title}</div>
       <div className="content">{content}</div>
-      <button onClick={action} className="btn-primary">
-        {label}
-      </button>
+      <Link to={url + `/${id}?action=${action}` ?? `/?action=${action}`}>
+        <div className="btn-primary">
+          {label}
+        </div>
+      </Link>
+
     </div>
   );
 
