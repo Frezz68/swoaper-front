@@ -4,6 +4,7 @@ import image1 from "../../assets/prestations/image1.png";
 import image2 from "../../assets/prestations/image2.png";
 import image3 from "../../assets/prestations/image3.png";
 import "../Prestation/Prestation.scss";
+import { redirect } from "react-router-dom";
 
 const Prestation = () => {
   return (
@@ -16,9 +17,9 @@ const Prestation = () => {
         Tous les matériaux ont besoin d’un traitement différent, ce qui comprend des produits et des brosses adaptés, ainsi que des connaissances pour les revitaliser."
         label="En savoir plus"
         swap={false}
-        action={(event) => {
-          console.log("Bouton cliqué !", event);
-        }}
+        url="/prestations-detail"
+        id="660cfb87e1fb922b3722452e"
+        action="panier"
       />
       <SectionPresta
         imageSrc={image2}
@@ -28,9 +29,9 @@ const Prestation = () => {
         Les produits sont adaptés aux matériaux de la chaussure, permettant ainsi d’enlever ce jaunissement."
         label="En savoir plus"
         swap={true}
-        action={(event) => {
-          console.log("Bouton cliqué !", event);
-        }}
+        url="/prestations-detail"
+        id="660cfc0ee1fb922b37224530"
+        action="panier"
       />
       <SectionPresta
         imageSrc={image3}
@@ -40,9 +41,9 @@ const Prestation = () => {
         Avant de réaliser la peinture il est important de nettoyer la chaussure avant de l’appliquer. Les produits sont spécifiques aux matériaux et la peinture utilisée tient dans le temps grâce à une protection qui est ajoutée lors des applications des différentes couches de peinture."
         label="En savoir plus"
         swap={false}
-        action={(event) => {
-          console.log("Bouton cliqué !", event);
-        }}
+        url="/prestations-detail"
+        id="660cfc13e1fb922b37224531"
+        action="contact"
       />
     </div>
   );
