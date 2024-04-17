@@ -1,0 +1,61 @@
+.container-contact {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .titre {
+        font-size: 3.25rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+    }
+    .email {
+        border: 1px solid black;
+        border-radius: 5px;
+        height: 2rem;
+        width: 40vw;
+        margin: 1vh;
+    }
+    .objet {
+        border: 1px solid black;
+        border-radius: 5px;
+        height: 2rem;
+        width: 40vw;
+        margin: 1vh;
+    }
+    .message {
+        border: 1px solid black;
+        border-radius: 5px;
+        height: 10rem;
+        width: 40vw;
+        margin: 1vh;
+        min-height: 200px;
+        min-width: 40vw;
+        max-width: 40vw;
+    }
+    .pieceJointe {
+        height: 2rem;
+        width: 30vw;
+        margin: 1vh;
+        align-items: center;
+    }
+    .envoyer {
+        border: none;
+        border-radius: 20px;
+        height: 2rem;
+        width: 30vw;
+        background-color: rgb(37 55 132);
+        color: white;
+        font-weight: 700;
+        font-size: 1.25rem;
+        font-family: Poppins;
+        margin: 1vh;
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.05);
+            transition: 0.2s;
+            background-color: rgb(243, 190, 215);
+            color: black;
+        }
+    }
+}
