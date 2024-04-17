@@ -5,13 +5,19 @@ import CardPrestation from "../../components/CardPrestation/CardPrestation";
 import {faHandSparkles, faSoap, faPumpSoap, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Home.scss";
+const video = require("../../assets/home/homeVideo.mp4");
 
 const Home = () => {
+  const toggleMuted =() => {
+    const video = document.querySelector('video');
+    if(video){
+      video.muted = !video.muted;
+    }
+  }
   return (
     <div>
       <section>
-      <h1>Welcome to the Home Page</h1>
-      <p>This is the content of the home page.</p>
+      <video loop autoPlay muted onClick={toggleMuted}><source src={video}></source></video>
       </section>
       <section className="homeColor">
         <div className="centerImg">
