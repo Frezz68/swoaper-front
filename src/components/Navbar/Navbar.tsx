@@ -28,14 +28,15 @@ const Navbar = () => {
           <Link to="/home">Home</Link>
         </div>
         <div className="navbar-item">
-          <Link to="/contact">Contact</Link>
-        </div>
-        <div className="navbar-item">
           <Link to="/prestations">Prestation</Link>
         </div>
         <div className="navbar-item">
-          <Link to="/boutique">Boutique</Link>
+          <Link to="/contact">Contact</Link>
         </div>
+        
+        {/* <div className="navbar-item">
+          <Link to="/boutique">Boutique</Link>
+        </div>*/}
       </div>
       {user && (
         <div className="navbar-name">
